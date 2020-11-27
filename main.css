@@ -1,5 +1,4 @@
-
-			body {
+		body {
 				margin:0;
 			}
 				
@@ -10,9 +9,15 @@
 				display:flex;
 				align-items: center;
   				justify-content: center;
-				text-align: left;
+				text-align: center;
+				word-wrap: break-word;
 				font: monospace;
-				font-size: 25px;
+				font-size: 50px;
 				background:#ffd966ff;
 				color:black;
 			}
+
+			p { 
+ 				max-width: 1000px;
+  				min-width: 1000px;
+			 }
