@@ -10,19 +10,19 @@
 
 <link rel="stylesheet" href="main.css"> 
 	
-	<div class="section">
+	<div class="section" id="section-0">
 
 		
-		<div class="interior">
+		<div class="interior" id="interior-0">
 			<h1>Smartphones - not so smart for the planet</h1>
 			
 		</div>
 	</div>
 
 
-		<div class="section">
+		<div class="section" id="section-1">
 				
-				<div class="interior">
+				<div class="interior" id="interior-1">
 					<h3 style="font-family:cursive;">
 			A website by 
 			<strong style="color:indigo"><em style="font-size:40">Colin Lynch.</em></strong>
@@ -34,10 +34,10 @@
 		</div>
 	</div>
 
-	<div class="section">
+	<div class="section" id="section-2">
 
 		
-		<div class="interior">
+		<div class="interior" id="interior-2">
 			<p>
 			In 2016, more than 1.4 billion smartphone units were sold worldwide; by 2020, smartphone subscriptions are set to more than double. 70 percent of the world's population will own a smartphone, according to the 2015 Ericsson Mobility Report.
 			</p>
@@ -45,10 +45,10 @@
 		</div>
 	</div>
 
-	<div class="section">
+	<div class="section" id="section-3">
 
 		
-		<div class="interior">
+		<div class="interior" id="interior-3">
 			<p>
 			More than 60 percent of young people between 18 and 35 years old owns a smartphone globally. In countries such as Germany or the United States, the figures reach 90 percent.
 			</p>
@@ -56,10 +56,10 @@
 		</div>
 	</div>
 
-	<div class="section">
+	<div class="section" id="section-4">
 
 		
-		<div class="interior">
+		<div class="interior" id="interior-4">
 			<p>
 			This increasing rate is based on an unsustainable throwaway culture. Almost 80 percent of the sales correspond to consumers replacing their phones, even though most phones are still in working order, Greenpeace has calculated.
 			</p>
@@ -67,10 +67,10 @@
 		</div>
 	</div>
 
-	<div class="section">
+	<div class="section" id="section-5">
 
 		
-		<div class="interior">
+		<div class="interior" id="interior-5">
 			<p>
 			The inner parts of our phones include aluminum, gold and cobalt. Mining for such materials has led to violent conflicts and hazardous working conditions in countries like the Democratic Republic of Congo - and kids are among the main victims.
 			</p>
@@ -78,10 +78,10 @@
 		</div>
 	</div>
 
-	<div class="section">
+	<div class="section" id="section-6">
 
 		
-		<div class="interior">
+		<div class="interior" id="interior-6">
 			<p>
 			Besides metals, smartphones also contain high amounts of plastic - which is derived from crude oil - and several of its elements are made up of silicon wafers, which require a lot of resources to produce. 
 			</p>
@@ -89,10 +89,10 @@
 		</div>
 	</div>
 
-	<div class="section">
+	<div class="section" id="section-7">
 
 		
-		<div class="interior">
+		<div class="interior" id="interior-7">
 			<p>
 			Your individual phone only contains a small amount of these substances, but seven billion of them cause significant damage to our planet and our finite resources.
 			</p>
@@ -100,10 +100,10 @@
 		</div>
 	</div>
 
-	<div class="section">
+	<div class="section" id="section-8">
 
 		
-		<div class="interior">
+		<div class="interior" id="interior-8">
 
 
 			<p>
@@ -113,10 +113,10 @@
 		</div>
 	</div>
 
-	<div class="section">
+	<div class="section" id="section-9">
 
 		
-		<div class="interior">
+		<div class="interior" id="interior-9">
 
 
 			<p>
@@ -126,10 +126,10 @@
 		</div>
 	</div>
 
-	<div class="section">
+	<div class="section" id="section-10">
 
 		
-		<div class="interior">
+		<div class="interior" id="interior-10">
 
 
 			<p>
@@ -139,10 +139,10 @@
 		</div>
 	</div>
 
-	<div class="section">
+	<div class="section" id="section-11">
 
 		
-		<div class="interior">
+		<div class="interior" id="interior-11">
 
 
 			<p>
@@ -152,24 +152,24 @@
 		</div>
 	</div>
 
-	<div class="section">
+	<div class="section" id="section-12">
 
 		
-		<div class="interior">
+		<div class="interior" id="interior-12">
 
 
 			<p>
 			Ufortunately, the high costs of recycling are often the main obstacle to the ideal of a circular economy, where waste would almost disappear and all resources would be used efficiently.
-</p>
+
 			</p>
 			
 		</div>
 	</div>
 
-	<div class="section">
+	<div class="section" id="section-13">
 
 		
-		<div class="interior">
+		<div class="interior" id="interior-13">
 
 
 			<p>
@@ -179,7 +179,53 @@
 		</div>
 	</div>
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+		<script>
+
+
+			//MOVE THIS SHIT TO A SEPARATE JS FILE.
+
+			var sectionArray = []; //CREATING AN EMPTY ARRAY VARIABLE.
+
+			$(".section").each(function(){ //LOOPING THROUGH EACH OF THE DIVs WITH THE CLASS SECTION
+				var topPosition = $(this).offset().top //getting distance from top of page and loading that into a variable called topPosition
+
+
+				$(this).attr("data-top",topPosition) //putting that variable into the HTML page.
+				sectionArray.push(topPosition) //adding that value into the sectionArray variable
+
+			})
+
+			//console.log(sectionArray[5])
+
+			
+
+			$(document).scroll(function(){ 	//call this function whenever you're scrolling.
+				
+
+				var windowOffset = $(window).height()/2 //getting the height of the page on any screen (defined by client browser) divided by 2
+				var ft = $(document).scrollTop()+windowOffset  //creating a variable called "ft" and loading how far you've scrolled from the top of the document+half the height of the viewport.
+				//console.log(ft)
+
+				var i=0; 	//creating a variable called i and set it to 0;
+				while (i<sectionArray.length) { //looping through the code as long as i is less then and the number of entries in the array.
+
+
+					// && is AND
+					// || is OR
+					if ((ft >= sectionArray[i]) && (ft < sectionArray[i+1])) {
+						var s = "#section-"+i
+						$(".section").css({"opacity":0})
+						$(s).css({"opacity":1})
+						
+					}
+					i=i+1; //adding 1 to the variable i
+				}
+
+
+			})
+		</script>
 	
 </body>
-</html>
+</html>c

@@ -1,23 +1,34 @@
-		body {
+body {
 				margin:0;
+				background:#ffd966ff;
+				font-family:"work sans";
 			}
 				
-				.section {
+		.section {
 
-				width:100vw;
-				height:100vh;
-				display:flex;
-				align-items: center;
-  				justify-content: center;
-				text-align: center;
-				word-wrap: break-word;
-				font: monospace;
-				font-size: 50px;
-				background:#ffd966ff;
-				color:black;
-			}
+		width:100vw;
+		height:100vh;
+		word-wrap: break-word;
+		font: monospace;
+		font-size: 50px;
+		
+		color:black;
+		opacity:0;
+		transition:opacity 0.5s;
+	}
 
-			p { 
- 				max-width: 1000px;
-  				min-width: 1000px;
-			 }
+	.interior {
+		position:fixed;
+		top:0; left:0;
+		width:100vw;
+		height:100vh;
+		display:flex;
+		align-items: center;
+		justify-content: center;
+
+	}
+
+	p { 
+			max-width: 1000px;
+			min-width: 1000px;
+	 }
